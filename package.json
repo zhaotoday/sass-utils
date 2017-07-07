@@ -1,0 +1,23 @@
+{
+  "name": "sass-utils",
+  "version": "1.0.0",
+  "description": "Sass functions, mixins, placeholders and so on",
+  "main": "index.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhaotoday/sass-utils.git"
+  },
+  "keywords": [
+    "sass",
+    "utils"
+  ],
+  "author": "zhaojintian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhaotoday/sass-utils/issues"
+  },
+  "homepage": "https://github.com/zhaotoday/sass-utils#readme"
+}
