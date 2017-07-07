@@ -1,1 +1,1 @@
-Admin system boilerplate based on iView.
+sass utils
