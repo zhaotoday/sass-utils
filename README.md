@@ -2,7 +2,7 @@
 一个极简的轻量级 Sass 工具库，包括 Sass 混合、函数、预设变量等。
 
 ## 遵循原则
-若无必要,勿增实体。
+若无必要，勿增实体。
 
 ## 命名规范
 BEM 命名法。
@@ -381,16 +381,37 @@ $supports-ie8: true;
 像素转 rem。
 ```scss
 @function px2rem ($px) {
-  @return _px2rem($px);
+  @return _px2rem($px, 75);
+}
+
+.selector {
+  width: px2rem(750px);
 }
 ```
 
+```scss
+.selector {
+  width: 10rem;
+}
+```
 
 #### _color
 获取颜色。需要在业务代码中重写，方便调用。
 ```scss
+$colors: yellow red;
+
 @function color($index) {
   @return _color($colors, $index);
+}
+
+.selector {
+  color: color(2);
+}
+```
+
+```scss
+.selector {
+  color: red;
 }
 ```
 
