@@ -198,7 +198,9 @@
  * @param {string} $value 值
  */
 @mixin only-ie8($property, $value) {
-  #{$property}: $value + \9;
+  @if $supports-ie8 {
+    #{$property}: $value + \9;
+  }
 }
 
 /**
