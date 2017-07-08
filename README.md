@@ -1,8 +1,11 @@
 ## 介绍
 一个极简的轻量级 Sass 工具库，包括 Sass 混合、函数、预设变量等。
 
-## 遵循的原则
+## 遵循原则
 若无必要,勿增实体。
+
+## 命名规范
+BEM 命名法。
 
 ## 使用方法
 ```bash
@@ -33,6 +36,20 @@ $colors: red yellow;
 ## 混合（mixin）
 #### text--middle
 文字垂直居中。
+```scss
+// sass
+.selector {
+  @include text--middle(100px);
+}
+```
+
+```scss
+// css
+.selector {
+  height: 100px;
+  line-height: 100px;
+} 
+```
 
 #### block--center
 块级元素水平居中。
