@@ -238,7 +238,7 @@ BEM modifier。
 ```scss
 // sass
 .selector {
-  @include padding(100px, 200px, 300px, 400px);
+  @include padding(100px, 200px, null, 400px);
 }
 ```
 
@@ -247,7 +247,6 @@ BEM modifier。
 .selector {
   padding-top: 100px;
   padding-right: 200px;
-  padding-bottom: 300px;
   padding-left: 400px;  
 }
 ```
@@ -257,14 +256,16 @@ BEM modifier。
 ```scss
 // sass
 .selector {
-  
+  @include text--overflow;
 }
 ```
 
 ```scss
 // css
 .selector {
-  
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;  
 }
 ```
 
@@ -273,14 +274,14 @@ BEM modifier。
 ```scss
 // sass
 .selector {
-  
+  @include only-ie8(display, inline);
 }
 ```
 
 ```scss
 // css
 .selector {
-  
+  display: inline\9;
 }
 ```
 
@@ -289,14 +290,16 @@ BEM modifier。
 ```scss
 // sass
 .selector {
-  
+  @include position--relative(100px, 200px);
 }
 ```
 
 ```scss
 // css
 .selector {
-  
+  position: relative;
+  top: 100px;
+  right: 200px;
 }
 ```
 
@@ -305,14 +308,16 @@ BEM modifier。
 ```scss
 // sass
 .selector {
-  
+  @include position--absolute(100px, 200px);
 }
 ```
 
 ```scss
 // css
 .selector {
-  
+  position: absolute;
+  top: 100px;
+  right: 200px;
 }
 ```
 
@@ -321,14 +326,16 @@ BEM modifier。
 ```scss
 // sass
 .selector {
-  
+  @include position--fixed(100px, 200px);
 }
 ```
 
 ```scss
 // css
 .selector {
-  
+  position: fixed;
+  top: 100px;
+  right: 200px;
 }
 ```
 
@@ -336,15 +343,19 @@ BEM modifier。
 兼容 IE8 的 display: inline-block。
 ```scss
 // sass
+$supports-ie8: true;
+
 .selector {
-  
+  @include inline--block;
 }
 ```
 
 ```scss
 // css
 .selector {
-  
+  display: inline-block;
+  display: inline\9;
+  zoom: 1\9;  
 }
 ```
 
@@ -353,23 +364,35 @@ BEM modifier。
 ```scss
 // sass
 .selector {
-  
+  @include size(100px, 200px);
 }
 ```
 
 ```scss
 // css
 .selector {
-  
+  width: 100px;
+  height: 200px;
 }
 ```
 
 ## 函数（function）
 #### _px2rem
 像素转 rem。
+```scss
+@function px2rem ($px) {
+  @return _px2rem($px);
+}
+```
+
 
 #### _color
 获取颜色。需要在业务代码中重写，方便调用。
+```scss
+@function color($index) {
+  @return _color($colors, $index);
+}
+```
 
 ## 预设变量（variables）
 #### $font-family
