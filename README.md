@@ -4,7 +4,7 @@
 ## 遵循的原则
 若无必要,勿增实体。
 
-## 使用
+## 使用方法
 ```bash
 # 安装
 $ npm install --save sass-utils
@@ -18,11 +18,11 @@ $ npm install --save sass-utils
   /* 调用混合 */
   @include position--relative;
   
-  /* 使用变量 */
+  /* 使用预设变量来设置字体 */
   font-family: $font-family-english;
 }
 
-/* 重写函数 */
+/* 重写函数，方便调用 */
 $colors: red yellow;
 
 @function color($index) {
@@ -88,14 +88,14 @@ BEM modifier。
 #### size
 设置宽高。
 
-## 函数
+## 函数（function）
 #### _px2rem
 像素转 rem。
 
 #### _color
 获取颜色。需要在业务代码中重写，方便调用。
 
-## 预设变量
+## 预设变量（variables）
 #### $font-family
 字体 - 中文。
 
@@ -114,21 +114,4 @@ BEM modifier 分隔符。
 #### $supports-ie8
 是否兼容 IE8。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## 持续更新中...
