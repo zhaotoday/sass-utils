@@ -440,5 +440,3 @@ BEM modifier 分隔符。
 
 #### $supports-ie8
 是否兼容 IE8。
-
-## 持续更新中...
