@@ -5,7 +5,7 @@
  * @param {string} $px 像素值
  * @return {string}
  */
-@function px2rem($px) {
+@function _px2rem($px) {
   @return ($px / 75px) * 1rem;
 }
 
