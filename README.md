@@ -7,6 +7,9 @@
 ## 命名规范
 BEM 命名法。
 
+## 案例
+https://github.com/zhaotoday/webpack-website
+
 ## 使用方法
 ```bash
 # 安装
@@ -380,6 +383,7 @@ $supports-ie8: true;
 #### _px2rem
 像素转 rem。
 ```scss
+// sass
 @function px2rem ($px) {
   @return _px2rem($px, 75);
 }
@@ -390,6 +394,7 @@ $supports-ie8: true;
 ```
 
 ```scss
+// css
 .selector {
   width: 10rem;
 }
@@ -398,6 +403,7 @@ $supports-ie8: true;
 #### _color
 获取颜色。需要在业务代码中重写，方便调用。
 ```scss
+// sass
 $colors: yellow red;
 
 @function color($index) {
@@ -410,6 +416,7 @@ $colors: yellow red;
 ```
 
 ```scss
+// css
 .selector {
   color: red;
 }
@@ -417,13 +424,13 @@ $colors: yellow red;
 
 ## 预设变量（variables）
 #### $font-family
-字体 - 中文。
+中文字体。
 
 #### $font-family-mobile
-字体 - 移动端。
+移动端字体。
 
 #### $font-family-english
-字体 - 英文。
+英文字体。
 
 #### $separator-element
 BEM element 分隔符。
