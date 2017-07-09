@@ -237,7 +237,7 @@ BEM modifier。
 ```
 
 #### text--overflow
-超出文字用省略号代替。
+文字超出部分用省略号代替。
 ```scss
 // sass
 .selector {
