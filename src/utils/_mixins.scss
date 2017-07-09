@@ -100,15 +100,6 @@
 }
 
 /**
- * 文字超出部分用省略号代替
- */
-@mixin text--ellipsis {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-/**
  * 清除浮动
  */
 @mixin clearfix() {
@@ -174,7 +165,7 @@
 }
 
 /**
- * 超出文字用省略号代替
+ * 文字超出部分用省略号代替
  * @param {number} $lines 文字行数
  */
 @mixin text--overflow($lines: 1) {

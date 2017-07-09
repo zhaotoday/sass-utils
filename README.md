@@ -177,24 +177,6 @@ BEM element。
 #### m
 BEM modifier。
 
-#### text--ellipsis
-文字超出部分用省略号代替。
-```scss
-// sass
-.selector {
-  @include text--ellipsis;
-}
-```
-
-```scss
-// css
-.selector {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;  
-}
-```
-
 #### clearfix
 清除浮动。
 ```scss
