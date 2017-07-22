@@ -292,3 +292,57 @@
   width: $width;
   height: $height;
 }
+
+/**
+ * 圆
+ * @param {string} $diameter 直径
+ */
+@mixin circle($diameter) {
+  width: $diameter;
+  height: $diameter;
+  border-radius: 50%;
+}
+
+/**
+ * 横线
+ * @param $margin-top {string} 顶部间距
+ * @param $margin-bottom {string} 底部间距
+ * @param $color {string} 横线颜色
+ */
+@mixin hr($margin-top: 0, $margin-bottom: 0, $color: #000) {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $color;
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
+  display: block;
+}
+
+/**
+ * 紧贴顶部
+ */
+@mixin header--sticky {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+/**
+ * 紧贴底部
+ */
+@mixin footer--sticky {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/**
+ * 隐藏文字
+ */
+@mixin text--hide {
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
