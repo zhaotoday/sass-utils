@@ -4,7 +4,7 @@
  * @param {string} $remUnit 1rem 的像素值
  * @return {string}
  */
-@function _px2rem($px, $remUnit: 75) {
+@function _px2rem($px, $remUnit: 75px) {
   @return ($px / $remUnit) * 1rem;
 }
 
