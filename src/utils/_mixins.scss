@@ -72,7 +72,10 @@
   $font: nth($fonts, $index);
   $font-size: nth($font, 1);
 
-  font-weight: nth($font, 2);
+  @if (length($font) == 2) {
+    font-weight: nth($font, 2);
+  }
+
   font-size: $font-size * 2;
 }
 
