@@ -64,6 +64,19 @@
 }
 
 /**
+ * 字体
+ * @param {array} $fonts 字体列表
+ * @param {number} $index 字体列表索引
+ */
+@mixin _font-for-debug($fonts, $index) {
+  $font: nth($fonts, $index);
+  $font-size: nth($font, 1);
+
+  font-weight: nth($font, 2);
+  font-size: $font-size * 2;
+}
+
+/**
  * BEM block
  * @param {array} $blocks block 选择器
  */
