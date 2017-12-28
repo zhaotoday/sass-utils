@@ -8,10 +8,10 @@ $font-family-mobile: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
 $font-family-english: Arial, Helvetica, sans-senif, "Microsoft YaHei";
 
 // BEM element 分隔符
-$separator-element: '__';
+$bem-separator-element: '__';
 
 // BEM modifier 分隔符
-$separator-modifier: '--';
+$bem-separator-modifier: '--';
 
 // 是否兼容 IE8
 $supports-ie8: false;

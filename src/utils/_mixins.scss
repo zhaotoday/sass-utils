@@ -83,7 +83,7 @@
  * BEM block
  * @param {array} $blocks block 选择器
  */
-@mixin b($blocks...) {
+@mixin bem-block($blocks...) {
   @each $block in $blocks {
     .#{$block} {
       @content;
@@ -95,9 +95,9 @@
  * BEM element
  * @param {array} $elements element 选择器
  */
-@mixin e($elements...) {
+@mixin bem-element($elements...) {
   @each $element in $elements {
-    &#{$separator-element + $element} {
+    &#{$bem-separator-element + $element} {
       @content;
     }
   }
@@ -107,9 +107,10 @@
  * BEM modifier
  * @param {array} $modifiers modifier 选择器
  */
-@mixin m($modifiers...) {
+@mixin bem-modifier($modifiers...) {
   @each $modifier in $modifiers {
-    &#{$separator-modifier + $modifier} {
+    &#{$bem-separator-modifier + $modifier},
+    &.#{$modifier} {
       @content;
     }
   }
