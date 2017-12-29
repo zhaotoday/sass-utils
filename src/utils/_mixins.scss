@@ -84,10 +84,14 @@
  * @param {array} $blocks block 选择器
  */
 @mixin bem-block($blocks...) {
+  $selectors: null;
+
   @each $block in $blocks {
-    .#{$block} {
-      @content;
-    }
+    $selectors: append($selectors, unquote('.' + $block), comma);
+  }
+
+  #{$selectors} {
+    @content;
   }
 }
 
@@ -96,10 +100,14 @@
  * @param {array} $elements element 选择器
  */
 @mixin bem-element($elements...) {
+  $selectors: null;
+
   @each $element in $elements {
-    &#{$bem-separator-element + $element} {
-      @content;
-    }
+    $selectors: append($selectors, unquote('&' + $bem-separator-element + $element), comma);
+  }
+
+  #{$selectors} {
+    @content;
   }
 }
 
@@ -108,11 +116,17 @@
  * @param {array} $modifiers modifier 选择器
  */
 @mixin bem-modifier($modifiers...) {
+  $selectors: null;
+  $states: null;
+
   @each $modifier in $modifiers {
-    &#{$bem-separator-modifier + $modifier},
-    &.#{$modifier} {
-      @content;
-    }
+    $selectors: append($selectors, unquote('&' + $bem-separator-modifier + $modifier), comma);
+    $states: append($states, unquote('&.' + $modifier), comma);
+  }
+
+  #{$selectors},
+  #{$states} {
+    @content;
   }
 }
 
