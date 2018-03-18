@@ -83,7 +83,7 @@
  * BEM block
  * @param {array} $blocks block 选择器
  */
-@mixin bem-block($blocks...) {
+@mixin b($blocks...) {
   $selectors: null;
 
   @each $block in $blocks {
@@ -99,7 +99,7 @@
  * BEM element
  * @param {array} $elements element 选择器
  */
-@mixin bem-element($elements...) {
+@mixin e($elements...) {
   $selectors: null;
 
   @each $element in $elements {
@@ -115,7 +115,7 @@
  * BEM modifier
  * @param {array} $modifiers modifier 选择器
  */
-@mixin bem-modifier($modifiers...) {
+@mixin m($modifiers...) {
   $selectors: null;
   $states: null;
 

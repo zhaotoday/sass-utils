@@ -1,6 +1,6 @@
 {
   "name": "sass-utils",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A light sass utility library, includes sass functions, mixins, placeholders and so on",
   "main": "src/index.scss",
   "scripts": {
