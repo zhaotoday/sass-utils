@@ -81,13 +81,14 @@
 
 /**
  * BEM block
+ * @param {string} $prefix 前缀
  * @param {array} $blocks block 选择器
  */
-@mixin b($blocks...) {
+@mixin block($prefix, $blocks...) {
   $selectors: null;
 
   @each $block in $blocks {
-    $selectors: append($selectors, unquote('.' + $block), comma);
+    $selectors: append($selectors, unquote('.' + $prefix + '-' + $block), comma);
   }
 
   #{$selectors} {
@@ -96,65 +97,46 @@
 }
 
 /**
- * BEM block
- * @param {array} $blocks block 选择器
+ * 组件
  */
 @mixin c($blocks...) {
-  $selectors: null;
-
-  @each $block in $blocks {
-    $selectors: append($selectors, unquote('.c-' + $block), comma);
-  }
-
-  #{$selectors} {
+  @include block(c, $blocks...) {
     @content;
   }
 }
 
 /**
- * BEM block
- * @param {array} $blocks block 选择器
+ * 组件中的组件
+ */
+@mixin cc($blocks...) {
+  @include block(cc, $blocks...) {
+    @content;
+  }
+}
+
+/**
+ * 对象
  */
 @mixin o($blocks...) {
-  $selectors: null;
-
-  @each $block in $blocks {
-    $selectors: append($selectors, unquote('.o-' + $block), comma);
-  }
-
-  #{$selectors} {
+  @include block(o, $blocks...) {
     @content;
   }
 }
 
 /**
- * BEM block
- * @param {array} $blocks block 选择器
+ * 页面
  */
 @mixin p($blocks...) {
-  $selectors: null;
-
-  @each $block in $blocks {
-    $selectors: append($selectors, unquote('.p-' + $block), comma);
-  }
-
-  #{$selectors} {
+  @include block(p, $blocks...) {
     @content;
   }
 }
 
 /**
- * BEM block
- * @param {array} $blocks block 选择器
+ * 页面作用域下的 block
  */
-@mixin n($blocks...) {
-  $selectors: null;
-
-  @each $block in $blocks {
-    $selectors: append($selectors, unquote('.n-' + $block), comma);
-  }
-
-  #{$selectors} {
+@mixin pb($blocks...) {
+  @include block(pb, $blocks...) {
     @content;
   }
 }
@@ -181,14 +163,17 @@
  */
 @mixin m($modifiers...) {
   $selectors: null;
+  $m-selectors: null;
   $states: null;
 
   @each $modifier in $modifiers {
     $selectors: append($selectors, unquote('&' + $bem-separator-modifier + $modifier), comma);
+    $m-selectors: append($m-selectors, unquote('&.m-' + $modifier), comma);
     $states: append($states, unquote('&.' + $modifier), comma);
   }
 
   #{$selectors},
+  #{$m-selectors},
   #{$states} {
     @content;
   }
