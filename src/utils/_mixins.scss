@@ -80,9 +80,9 @@
 }
 
 /**
- * BEM block
+ * BEM block（模块）
  * @param {string} $prefix 前缀
- * @param {array} $blocks block 选择器
+ * @param {array} $blocks 名称
  */
 @mixin block($prefix, $blocks...) {
   $selectors: null;
@@ -98,6 +98,7 @@
 
 /**
  * 组件
+ * @param {array} $blocks 名称
  */
 @mixin c($blocks...) {
   @include block(c, $blocks...) {
@@ -107,6 +108,7 @@
 
 /**
  * 组件中的组件
+ * @param {array} $blocks 名称
  */
 @mixin cc($blocks...) {
   @include block(cc, $blocks...) {
@@ -116,6 +118,7 @@
 
 /**
  * 对象
+ * @param {array} $blocks 名称
  */
 @mixin o($blocks...) {
   @include block(o, $blocks...) {
@@ -125,6 +128,7 @@
 
 /**
  * 页面
+ * @param {array} $blocks 名称
  */
 @mixin p($blocks...) {
   @include block(p, $blocks...) {
@@ -133,7 +137,8 @@
 }
 
 /**
- * 页面作用域下的 block
+ * 页面中的模块
+ * @param {array} $blocks 名称
  */
 @mixin pb($blocks...) {
   @include block(pb, $blocks...) {
@@ -142,8 +147,8 @@
 }
 
 /**
- * BEM element
- * @param {array} $elements element 选择器
+ * BEM element（元素）
+ * @param {array} $elements 名称
  */
 @mixin e($elements...) {
   $selectors: null;
@@ -158,22 +163,32 @@
 }
 
 /**
- * BEM modifier
- * @param {array} $modifiers modifier 选择器
+ * BEM modifier（修饰符）
+ * @param {array} $modifiers 名称
  */
 @mixin m($modifiers...) {
   $selectors: null;
-  $m-selectors: null;
-  $states: null;
 
   @each $modifier in $modifiers {
     $selectors: append($selectors, unquote('&' + $bem-separator-modifier + $modifier), comma);
-    $m-selectors: append($m-selectors, unquote('&.m-' + $modifier), comma);
-    $states: append($states, unquote('&.' + $modifier), comma);
   }
 
-  #{$selectors},
-  #{$m-selectors},
+  #{$selectors} {
+    @content;
+  }
+}
+
+/**
+ * BEM state（状态）
+ * @param {array} $states 名称
+ */
+@mixin m($states...) {
+  $states: null;
+
+  @each $state in $states {
+    $states: append($states, unquote('&.' + $states), comma);
+  }
+
   #{$states} {
     @content;
   }
