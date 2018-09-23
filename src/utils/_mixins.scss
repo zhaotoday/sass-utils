@@ -1,85 +1,4 @@
 /**
- * 文字垂直居中
- * @param {string} $height 高度
- */
-@mixin text--middle($height) {
-  height: $height;
-  line-height: $height;
-}
-
-/**
- * 块级元素水平居中
- * @param {string} $width 宽度
- */
-@mixin block--center() {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/**
- * 链接块化
- * @param {string} $width 宽度
- * @param {string} $height 高度
- */
-@mixin link--block($width, $height) {
-  display: block;
-  text-decoration: none;
-  width: $width;
-  height: $height;
-}
-
-/**
- * 图片块化
- * @param {string} $width 宽度
- * @param {string} $height 高度
- */
-@mixin img--block($width, $height) {
-  display: block;
-  width: $width;
-  height: $height;
-}
-
-/**
- * 字体
- * @param {array} $fonts 字体列表
- * @param {number} $index 字体列表索引
- */
-@mixin _font($fonts, $index) {
-  $font: nth($fonts, $index);
-  $font-size: nth($font, 1);
-
-  font-size: $font-size;
-
-  @if (length($font) == 2) {
-    font-weight: nth($font, 2);
-  }
-
-  [data-dpr="2"] & {
-    font-size: $font-size * 2;
-  }
-
-  [data-dpr="3"] & {
-    font-size: $font-size * 3;
-  }
-}
-
-/**
- * 字体
- * @param {array} $fonts 字体列表
- * @param {number} $index 字体列表索引
- */
-@mixin _font-for-debug($fonts, $index) {
-  $font: nth($fonts, $index);
-  $font-size: nth($font, 1);
-
-  @if (length($font) == 2) {
-    font-weight: nth($font, 2);
-  }
-
-  font-size: $font-size * 2;
-}
-
-/**
  * BEM block（模块）
  * @param {string} $prefix 前缀
  * @param {array} $blocks 名称
@@ -183,15 +102,96 @@
  * @param {array} $states 名称
  */
 @mixin m($states...) {
-  $states: null;
+  $selectors: null;
 
   @each $state in $states {
-    $states: append($states, unquote('&.' + $states), comma);
+    $selectors: append($selectors, unquote('&.' + $state), comma);
   }
 
-  #{$states} {
+  #{$selectors} {
     @content;
   }
+}
+
+/**
+ * 文字垂直居中
+ * @param {string} $height 高度
+ */
+@mixin text--middle($height) {
+  height: $height;
+  line-height: $height;
+}
+
+/**
+ * 块级元素水平居中
+ * @param {string} $width 宽度
+ */
+@mixin block--center() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**
+ * 链接块化
+ * @param {string} $width 宽度
+ * @param {string} $height 高度
+ */
+@mixin link--block($width, $height) {
+  display: block;
+  text-decoration: none;
+  width: $width;
+  height: $height;
+}
+
+/**
+ * 图片块化
+ * @param {string} $width 宽度
+ * @param {string} $height 高度
+ */
+@mixin img--block($width, $height) {
+  display: block;
+  width: $width;
+  height: $height;
+}
+
+/**
+ * 字体
+ * @param {array} $fonts 字体列表
+ * @param {number} $index 字体列表索引
+ */
+@mixin _font($fonts, $index) {
+  $font: nth($fonts, $index);
+  $font-size: nth($font, 1);
+
+  font-size: $font-size;
+
+  @if (length($font) == 2) {
+    font-weight: nth($font, 2);
+  }
+
+  [data-dpr="2"] & {
+    font-size: $font-size * 2;
+  }
+
+  [data-dpr="3"] & {
+    font-size: $font-size * 3;
+  }
+}
+
+/**
+ * 字体
+ * @param {array} $fonts 字体列表
+ * @param {number} $index 字体列表索引
+ */
+@mixin _font-for-debug($fonts, $index) {
+  $font: nth($fonts, $index);
+  $font-size: nth($font, 1);
+
+  @if (length($font) == 2) {
+    font-weight: nth($font, 2);
+  }
+
+  font-size: $font-size * 2;
 }
 
 /**
