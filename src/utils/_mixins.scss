@@ -101,7 +101,7 @@
  * BEM state（状态）
  * @param {array} $states 名称
  */
-@mixin m($states...) {
+@mixin s($states...) {
   $selectors: null;
 
   @each $state in $states {
