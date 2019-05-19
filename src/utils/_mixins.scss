@@ -56,6 +56,16 @@
 }
 
 /**
+ * 页面内模块
+ * @param {array} $blocks 名称
+ */
+@mixin b($blocks...) {
+  @include block(b, $blocks...) {
+    @content;
+  }
+}
+
+/**
  * 页面中的模块
  * @param {array} $blocks 名称
  */
