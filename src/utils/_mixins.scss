@@ -275,6 +275,7 @@
  */
 @mixin text--overflow($lines: 1) {
   overflow: hidden;
+  word-break: break-all;
 
   @if $lines == 1 {
     white-space: nowrap;
