@@ -4,7 +4,7 @@
   "description": "A light sass utility library, includes sass functions, mixins, placeholders and so on",
   "main": "src/index.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "repository": {
     "type": "git",
