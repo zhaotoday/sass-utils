@@ -1,0 +1,29 @@
+.u-fwb {
+  font-weight: bold;
+}
+
+.u-tac {
+  text-align: center;
+}
+
+.u-tal {
+  text-align: left;
+}
+
+.u-tar {
+  text-align: right;
+}
+
+.u-cf {
+  @include clearfix;
+}
+
+.u-lt {
+  text-decoration: line-through;
+}
+
+@for $i from 1 through 20 {
+  .u-to#{$i} {
+    @include text--overflow(#{$i});
+  }
+}

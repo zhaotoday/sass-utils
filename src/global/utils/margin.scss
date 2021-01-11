@@ -1,0 +1,9 @@
+@each $item in $margin-items {
+  .u-mt#{$item / 1px} {
+    margin-top: $item;
+  }
+
+  .u-mb#{$item / 1px} {
+    margin-bottom: $item;
+  }
+}

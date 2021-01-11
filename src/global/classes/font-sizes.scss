@@ -1,0 +1,9 @@
+@each $value in $font-sizes {
+  %fs#{$value / 1px} {
+    font-size: $value;
+  }
+
+  .fs#{$value / 1px} {
+    @extend %fs#{$value / 1px};
+  }
+}
