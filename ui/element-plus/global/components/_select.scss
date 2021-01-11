@@ -1,0 +1,9 @@
+@include c(select) {
+  @include m(full) {
+    width: 100%;
+
+    .el-input {
+      width: 100% !important;
+    }
+  }
+}
