@@ -1,4 +1,4 @@
-@each $item in $margin-items {
+@each $item in $margins {
   .u-mt#{$item / 1px} {
     margin-top: $item;
   }

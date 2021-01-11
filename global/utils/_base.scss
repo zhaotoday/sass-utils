@@ -22,6 +22,10 @@
   text-decoration: line-through;
 }
 
+.u-pr {
+  position: relative;
+}
+
 @for $i from 1 through 20 {
   .u-to#{$i} {
     @include text--overflow(#{$i});

@@ -1,4 +1,4 @@
-@each $item in $padding-items {
+@each $item in $paddings {
   .u-pt#{$item / 1px} {
     padding-top: $item;
   }
