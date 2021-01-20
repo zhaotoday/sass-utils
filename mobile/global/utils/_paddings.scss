@@ -1,0 +1,9 @@
+@each $item in $paddings {
+  .u-pt#{$item / 1px} {
+    padding-top: $item;
+  }
+
+  .u-pb#{$item / 1px} {
+    padding-bottom: $item;
+  }
+}
