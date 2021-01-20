@@ -1,6 +1,6 @@
 @each $value in $font-sizes {
   %fs#{$value / 1px} {
-    font-size: $value;
+    font-size: px2rpx($value);
   }
 
   .fs#{$value / 1px} {
