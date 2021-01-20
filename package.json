@@ -1,6 +1,6 @@
 {
   "name": "sass-utils",
-  "version": "1.0.32",
+  "version": "1.0.33",
   "description": "A light sass utility library, includes sass functions, mixins, placeholders and so on",
   "main": "index.scss",
   "scripts": {
@@ -19,8 +19,5 @@
   "bugs": {
     "url": "https://github.com/zhaotoday/sass-utils/issues"
   },
-  "homepage": "https://github.com/zhaotoday/sass-utils#readme",
-  "dependencies": {
-    "minireset.css": "0.0.6"
-  }
+  "homepage": "https://github.com/zhaotoday/sass-utils#readme"
 }
