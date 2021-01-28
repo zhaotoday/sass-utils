@@ -1,14 +1,8 @@
 ## 介绍
-一个极简的轻量级 Sass 工具库，包括 Sass 混合、函数、预设变量等。
-
-## 遵循原则
-若无必要，勿增实体。
+一个极简的 Sass 工具库，包括 Sass mixins、functions、预设变量等。
 
 ## 命名规范
-BEM 命名法。
-
-## 案例
-https://github.com/zhaotoday/webpack-website
+[BEM 命名法。](https://github.com/zhaotoday/bem)
 
 ## 使用方法
 ```bash
@@ -17,26 +11,16 @@ $ npm install --save sass-utils
 ```
 
 ```scss
-/* 在 sass 文件中导入 */
+/* 在 Sass 文件中导入 */
 @import "~sass-utils";
 
 .selector {
-  /* 调用混合 */
+  /* 调用 Mixin */
   @include position--relative;
-  
-  /* 使用预设变量来设置字体 */
-  font-family: $font-family-english;
-}
-
-/* 重写函数，方便调用 */
-$colors: red yellow;
-
-@function color($index) {
-  @return _color($colors, $index);
 }
 ```
 
-## 混合（mixin）
+## Mixins
 #### text--middle
 文字垂直居中。
 ```scss
@@ -68,74 +52,6 @@ $colors: red yellow;
 .selector {
   margin-left: auto;
   margin-right: auto;
-}
-```
-
-#### link--block
-链接块化。
-```scss
-// sass
-.selector {
-  @include link--block(100px, 200px);
-}
-```
-
-```scss
-// css
-.selector {
-  display: block;
-  text-decoration: none;
-  width: 100px;
-  height: 200px;  
-}
-```
-
-#### img--block
-图片块化。
-```scss
-// sass
-.selector {
-  @include img--block(100px, 200px);
-}
-```
-
-```scss
-// css
-.selector {
-  display: block;
-  width: 100px;
-  height: 200px;  
-}
-```
-
-#### _font
-字体。需要在业务代码中重写，方便调用。
-```scss
-// sass
-$fonts: (12px) (13px bold);
-
-@mixin font($index) {
-  @include _font($fonts, $index);
-}
-
-.selector {
-  @include font(2);
-}
-```
-
-```scss
-// css
-.selector {
-  font-size: 13px;
-  font-weight: bold;
-}
-
-[data-dpr="2"] .selector {
-  font-size: 26px;
-}
-
-[data-dpr="3"] .selector {
-  font-size: 39px;
 }
 ```
 
@@ -324,26 +240,6 @@ BEM modifier。
 }
 ```
 
-#### inline--block
-兼容 IE8 的 display: inline-block。
-```scss
-// sass
-$supports-ie8: true;
-
-.selector {
-  @include inline--block;
-}
-```
-
-```scss
-// css
-.selector {
-  display: inline-block;
-  display: inline\9;
-  zoom: 1\9;  
-}
-```
-
 #### size
 设置宽高。
 ```scss
@@ -361,7 +257,7 @@ $supports-ie8: true;
 }
 ```
 
-## 函数（function）
+## Functions
 #### _px2rem
 像素转 rem。
 ```scss
@@ -382,37 +278,7 @@ $supports-ie8: true;
 }
 ```
 
-#### _color
-获取颜色。需要在业务代码中重写，方便调用。
-```scss
-// sass
-$colors: yellow red;
-
-@function color($index) {
-  @return _color($colors, $index);
-}
-
-.selector {
-  color: color(2);
-}
-```
-
-```scss
-// css
-.selector {
-  color: red;
-}
-```
-
-## 预设变量（variables）
-#### $font-family
-中文字体。
-
-#### $font-family-mobile
-移动端字体。
-
-#### $font-family-english
-英文字体。
+## Variables
 
 #### $separator-element
 BEM element 分隔符。
