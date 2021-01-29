@@ -289,3 +289,34 @@ BEM modifier 分隔符。
 
 #### $supports-ie8
 是否兼容 IE8。
+
+## Utils
+```scss
+.u-fwb {
+  font-weight: bold;
+}
+
+.u-tac {
+  text-align: center;
+}
+
+.u-tal {
+  text-align: left;
+}
+
+.u-tar {
+  text-align: right;
+}
+
+.u-cf {
+  @include clearfix;
+}
+
+.u-lt {
+  text-decoration: line-through;
+}
+
+.u-pr {
+  position: relative;
+}
+```
