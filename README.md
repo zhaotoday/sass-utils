@@ -1,5 +1,5 @@
 ## 介绍
-一个极简的 Sass 工具库，包括 Sass mixins、functions、预设变量等。
+一个极简的 Sass 工具库，包括 mixins、functions、variables 等。
 
 ## 命名规范
 [BEM 命名法。](https://github.com/zhaotoday/bem)
@@ -21,39 +21,6 @@ $ npm install --save sass-utils
 ```
 
 ## Mixins
-#### text--middle
-文字垂直居中。
-```scss
-// sass
-.selector {
-  @include text--middle(100px);
-}
-```
-
-```scss
-// css
-.selector {
-  height: 100px;
-  line-height: 100px;
-} 
-```
-
-#### block--center
-块级元素水平居中。
-```scss
-// sass
-.selector {
-  @include block--center;
-}
-```
-
-```scss
-// css
-.selector {
-  margin-left: auto;
-  margin-right: auto;
-}
-```
 
 #### b
 BEM block。
@@ -92,6 +59,40 @@ BEM element。
 
 #### m
 BEM modifier。
+
+#### text--middle
+文字垂直居中。
+```scss
+// sass
+.selector {
+  @include text--middle(100px);
+}
+```
+
+```scss
+// css
+.selector {
+  height: 100px;
+  line-height: 100px;
+} 
+```
+
+#### block--center
+块级元素水平居中。
+```scss
+// sass
+.selector {
+  @include block--center;
+}
+```
+
+```scss
+// css
+.selector {
+  margin-left: auto;
+  margin-right: auto;
+}
+```
 
 #### clearfix
 清除浮动。
