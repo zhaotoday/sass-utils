@@ -1,5 +1,5 @@
 ## 介绍
-一个极简的 Sass 工具库，包括 mixins、functions、variables 等。
+一个极简的 Sass 工具库，包括 Mixins、Functions、Variables、Utils 等。
 
 ## 命名规范
 [BEM 命名法。](https://github.com/zhaotoday/bem)
