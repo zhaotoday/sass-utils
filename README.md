@@ -320,3 +320,6 @@ BEM modifier 分隔符。
   position: relative;
 }
 ```
+
+## 命名空间
+[BEM 命名空间](https://github.com/zhaotoday/bem#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4)
