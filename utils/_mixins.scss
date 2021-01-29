@@ -56,6 +56,16 @@
 }
 
 /**
+ * 视图
+ * @param {array} $blocks 名称
+ */
+@mixin v($blocks...) {
+  @include block(v, $blocks...) {
+    @content;
+  }
+}
+
+/**
  * 页面内模块
  * @param {array} $blocks 名称
  */
