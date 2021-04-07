@@ -6,4 +6,12 @@
   .u-pb#{$item / 1px} {
     padding-bottom: px2rpx($item);
   }
+
+  .u-pl#{$item / 1px} {
+    padding-left: px2rpx($item);
+  }
+
+  .u-pr#{$item / 1px} {
+    padding-right: px2rpx($item);
+  }
 }

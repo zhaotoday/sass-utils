@@ -6,4 +6,12 @@
   .u-mb#{$item / 1px} {
     margin-bottom: px2rpx($item);
   }
+
+  .u-ml#{$item / 1px} {
+    margin-left: px2rpx($item);
+  }
+
+  .u-mr#{$item / 1px} {
+    margin-right: px2rpx($item);
+  }
 }
