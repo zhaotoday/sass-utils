@@ -1,9 +1,19 @@
+@use "sass:math";
+
 @each $item in $paddings {
-  .u-pt#{$item / 1px} {
+  .u-pt#{math.div($item, 1px)} {
     padding-top: $item;
   }
 
-  .u-pb#{$item / 1px} {
+  .u-pb#{math.div($item, 1px)} {
     padding-bottom: $item;
+  }
+
+  .u-pl#{math.div($item, 1px)} {
+    padding-left: px2rpx($item);
+  }
+
+  .u-pr#{math.div($item, 1px)} {
+    padding-right: px2rpx($item);
   }
 }

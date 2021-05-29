@@ -1,9 +1,11 @@
-@each $value in $font-sizes {
-  %fs#{$value / 1px} {
-    font-size: px2rpx($value);
+@use "sass:math";
+
+@each $item in $font-sizes {
+  %fs#{math.div($item, 1px)} {
+    font-size: px2rpx($item);
   }
 
-  .fs#{$value / 1px} {
-    @extend %fs#{$value / 1px};
+  .fs#{math.div($item, 1px)} {
+    @extend %fs#{math.div($item, 1px)};
   }
 }
