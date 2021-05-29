@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /**
  * 像素转 rem
  * @param {string} $px 像素值
@@ -5,7 +7,7 @@
  * @return {string}
  */
 @function px2rem($px, $remUnit: 75px) {
-  @return ($px / $remUnit) * 1rem;
+  @return math.div($px, $remUnit) * 1rem;
 }
 
 /**
@@ -25,5 +27,5 @@
  * @return {string}
  */
 @function px2rpx($px) {
-  @return ($px / 1px) * 1rpx;
+  @return math.div($px, 1px) * 1rpx;
 }
