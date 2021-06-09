@@ -1,5 +1,3 @@
-@use "sass:math";
-
 /**
  * 像素转 rem
  * @param {string} $px 像素值
@@ -7,7 +5,7 @@
  * @return {string}
  */
 @function px2rem($px, $remUnit: 75px) {
-  @return math.div($px, $remUnit) * 1rem;
+  @return $px / $remUnit * 1rem;
 }
 
 /**
@@ -17,15 +15,4 @@
  */
 @function px2rem-for-debug($px) {
   @return $px;
-}
-
-/**
- * px 转 rpx
- * 用来修复在 WebStorm 中格式化 CSS 时，
- * 数字和 rpx 之间加了空格的 bug
- * @param {string} $px 值
- * @return {string}
- */
-@function px2rpx($px) {
-  @return math.div($px, 1px) * 1rpx;
 }

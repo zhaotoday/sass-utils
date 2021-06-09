@@ -1,5 +1,3 @@
-@use "sass:math";
-
 @each $item in $paddings {
   .u-pt#{math.div($item, 1px)} {
     padding-top: px2rpx($item);
