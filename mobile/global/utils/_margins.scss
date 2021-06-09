@@ -1,17 +1,17 @@
 @each $item in $margins {
-  .u-mt#{math.div($item, 1px)} {
+  .u-mt#{$item / 1px} {
     margin-top: px2rpx($item);
   }
 
-  .u-mb#{math.div($item, 1px)} {
+  .u-mb#{$item / 1px} {
     margin-bottom: px2rpx($item);
   }
 
-  .u-ml#{math.div($item, 1px)} {
+  .u-ml#{$item / 1px} {
     margin-left: px2rpx($item);
   }
 
-  .u-mr#{math.div($item, 1px)} {
+  .u-mr#{$item / 1px} {
     margin-right: px2rpx($item);
   }
 }
