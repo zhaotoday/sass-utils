@@ -1,0 +1,23 @@
+@use "sass:math";
+
+@each $item in $u-border-radii {
+  .u-br#{math.div($item, 1px)} {
+    border-radius: $item;
+  }
+
+  .u-btlr#{math.div($item, 1px)} {
+    border-top-left-radius: $item;
+  }
+
+  .u-btrr#{math.div($item, 1px)} {
+    border-top-right-radius: $item;
+  }
+
+  .u-bblr#{math.div($item, 1px)} {
+    border-bottom-left-radius: $item;
+  }
+
+  .u-bbrr#{math.div($item, 1px)} {
+    border-bottom-right-radius: $item;
+  }
+}

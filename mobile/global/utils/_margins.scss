@@ -1,4 +1,8 @@
-@each $item in $margins {
+@each $item in $u-margins {
+  .u-m#{$item / 1px} {
+    margin: px2rpx($item);
+  }
+
   .u-mt#{$item / 1px} {
     margin-top: px2rpx($item);
   }

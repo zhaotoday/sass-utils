@@ -1,6 +1,10 @@
 @use "sass:math";
 
-@each $item in $margins {
+@each $item in $u-margins {
+  .u-m#{math.div($item, 1px)} {
+    margin: $item;
+  }
+
   .u-mt#{math.div($item, 1px)} {
     margin-top: $item;
   }

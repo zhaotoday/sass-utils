@@ -1,6 +1,10 @@
 @use "sass:math";
 
-@each $item in $paddings {
+@each $item in $u-paddings {
+  .u-p#{math.div($item, 1px)} {
+    padding: $item;
+  }
+
   .u-pt#{math.div($item, 1px)} {
     padding-top: $item;
   }
