@@ -26,6 +26,10 @@
   position: relative;
 }
 
+.u-w1 {
+  width: 100%;
+}
+
 @for $i from 1 through 20 {
   .u-to#{$i} {
     @include text--overflow(#{$i});
