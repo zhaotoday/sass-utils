@@ -30,6 +30,10 @@
   width: 100%;
 }
 
+.u-circle {
+  border-radius: 50%;
+}
+
 @for $i from 1 through 20 {
   .u-to#{$i} {
     @include text--overflow(#{$i});
