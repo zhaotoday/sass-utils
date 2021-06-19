@@ -14,10 +14,10 @@
   }
 
   .u-ml#{math.div($item, 1px)} {
-    margin-left: px2rpx($item);
+    margin-left: $item;
   }
 
   .u-mr#{math.div($item, 1px)} {
-    margin-right: px2rpx($item);
+    margin-right: $item;
   }
 }
