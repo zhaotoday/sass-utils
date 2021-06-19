@@ -22,8 +22,9 @@
  * 用来修复在 WebStorm 中格式化 CSS 时，
  * 数字和 rpx 之间加了空格的 bug
  * @param {string} $px 值
+ * @param {string} $rpxUnit 1rpx 的像素值
  * @return {string}
  */
-@function px2rpx($px) {
-  @return $px / 1px * 1rpx;
+@function px2rpx($px, $rpxUnit: 1px) {
+  @return $px / $rpxUnit * 1rpx;
 }
