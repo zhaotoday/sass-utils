@@ -1,21 +1,23 @@
+@use "sass:math";
+
 @each $item in $u-border-radii {
-  .u-br#{$item / 1px} {
+  .u-br#{math.div($item, 1px)} {
     border-radius: px2rpx($item);
   }
 
-  .u-btlr#{$item / 1px} {
+  .u-btlr#{math.div($item, 1px)} {
     border-top-left-radius: px2rpx($item);
   }
 
-  .u-btrr#{$item / 1px} {
+  .u-btrr#{math.div($item, 1px)} {
     border-top-right-radius: px2rpx($item);
   }
 
-  .u-bblr#{$item / 1px} {
+  .u-bblr#{math.div($item, 1px)} {
     border-bottom-left-radius: px2rpx($item);
   }
 
-  .u-bbrr#{$item / 1px} {
+  .u-bbrr#{math.div($item, 1px)} {
     border-bottom-right-radius: px2rpx($item);
   }
 }

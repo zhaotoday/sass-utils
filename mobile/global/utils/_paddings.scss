@@ -1,21 +1,23 @@
+@use "sass:math";
+
 @each $item in $u-paddings {
-  .u-p#{$item / 1px} {
+  .u-p#{math.div($item, 1px)} {
     padding: px2rpx($item);
   }
 
-  .u-pt#{$item / 1px} {
+  .u-pt#{math.div($item, 1px)} {
     padding-top: px2rpx($item);
   }
 
-  .u-pb#{$item / 1px} {
+  .u-pb#{math.div($item, 1px)} {
     padding-bottom: px2rpx($item);
   }
 
-  .u-pl#{$item / 1px} {
+  .u-pl#{math.div($item, 1px)} {
     padding-left: px2rpx($item);
   }
 
-  .u-pr#{$item / 1px} {
+  .u-pr#{math.div($item, 1px)} {
     padding-right: px2rpx($item);
   }
 }
