@@ -86,6 +86,16 @@
 }
 
 /**
+ * 页面中的布局块
+ * @param {array} $blocks 名称
+ */
+@mixin l($blocks...) {
+  @include block(l, $blocks...) {
+    @content;
+  }
+}
+
+/**
  * BEM element（元素）
  * @param {array} $elements 名称
  */
