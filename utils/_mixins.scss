@@ -56,10 +56,20 @@
 }
 
 /**
- * 视图
+ * 页面
  * @param {array} $blocks 名称
  */
 @mixin v($blocks...) {
+  @include block(v, $blocks...) {
+    @content;
+  }
+}
+
+/**
+ * 页面组件
+ * @param {array} $blocks 名称
+ */
+@mixin vc($blocks...) {
   @include block(v, $blocks...) {
     @content;
   }
