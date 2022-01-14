@@ -1,21 +1,21 @@
 @each $item in $u-margins {
-  .u-m#{$item / 1px} {
+  .u-m#{calc($item / 1px)} {
     margin: px2rpx($item);
   }
 
-  .u-mt#{$item / 1px} {
+  .u-mt#{calc($item / 1px)} {
     margin-top: px2rpx($item);
   }
 
-  .u-mb#{$item / 1px} {
+  .u-mb#{calc($item / 1px)} {
     margin-bottom: px2rpx($item);
   }
 
-  .u-ml#{$item / 1px} {
+  .u-ml#{calc($item / 1px)} {
     margin-left: px2rpx($item);
   }
 
-  .u-mr#{$item / 1px} {
+  .u-mr#{calc($item / 1px)} {
     margin-right: px2rpx($item);
   }
 }

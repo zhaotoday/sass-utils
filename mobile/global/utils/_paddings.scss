@@ -1,21 +1,21 @@
 @each $item in $u-paddings {
-  .u-p#{$item / 1px} {
+  .u-p#{calc($item / 1px)} {
     padding: px2rpx($item);
   }
 
-  .u-pt#{$item / 1px} {
+  .u-pt#{calc($item / 1px)} {
     padding-top: px2rpx($item);
   }
 
-  .u-pb#{$item / 1px} {
+  .u-pb#{calc($item / 1px)} {
     padding-bottom: px2rpx($item);
   }
 
-  .u-pl#{$item / 1px} {
+  .u-pl#{calc($item / 1px)} {
     padding-left: px2rpx($item);
   }
 
-  .u-pr#{$item / 1px} {
+  .u-pr#{calc($item / 1px)} {
     padding-right: px2rpx($item);
   }
 }

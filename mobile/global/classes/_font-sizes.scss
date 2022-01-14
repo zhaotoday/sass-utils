@@ -1,9 +1,9 @@
 @each $item in $font-sizes {
-  %fs#{$item / 1px} {
+  %fs#{calc($item / 1px)} {
     font-size: px2rpx($item);
   }
 
-  .fs#{$item / 1px} {
-    @extend %fs#{$item / 1px};
+  .fs#{calc($item / 1px)} {
+    @extend %fs#{calc($item / 1px)};
   }
 }
