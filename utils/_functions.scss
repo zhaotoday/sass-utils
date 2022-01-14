@@ -5,7 +5,7 @@
  * @return {string}
  */
 @function px2rem($px, $remUnit: 75px) {
-  @return $px / $remUnit * 1rem;
+  @return calc($px / $remUnit * 1rem);
 }
 
 /**
@@ -25,5 +25,5 @@
  * @return {string}
  */
 @function px2rpx($px) {
-  @return $px / 1px * 1rpx;
+  @return calc($px / 1px * 1rpx);
 }
