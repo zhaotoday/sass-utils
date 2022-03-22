@@ -38,6 +38,10 @@
   border-radius: 50%;
 }
 
+.u-oh {
+  overflow: hidden;
+}
+
 @for $i from 1 through 20 {
   .u-to#{$i} {
     @include text--overflow(#{$i});
