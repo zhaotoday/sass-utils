@@ -42,6 +42,10 @@
   overflow: hidden;
 }
 
+.u-cp {
+  cursor: pointer;
+}
+
 @for $i from 1 through 20 {
   .u-to#{$i} {
     @include text--overflow(#{$i});
