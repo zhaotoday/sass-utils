@@ -46,6 +46,10 @@
   cursor: pointer;
 }
 
+.u-ofc {
+  object-fit: cover;
+}
+
 @for $i from 1 through 20 {
   .u-to#{$i} {
     @include text--overflow(#{$i});
