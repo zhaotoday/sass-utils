@@ -307,7 +307,7 @@
   overflow: hidden;
   word-break: break-all;
 
-  @if $lines == 1 {
+  @if ($lines == "1" or $lines == 1) {
     white-space: nowrap;
     text-overflow: ellipsis;
   } @else { /* stylelint-disable-line */
