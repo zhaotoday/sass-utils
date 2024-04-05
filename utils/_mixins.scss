@@ -8,13 +8,13 @@
 
   @each $block in $blocks {
     @if ($prefix == "") {
+      $selectors: append($selectors, unquote("." + $block), comma);
+    } @else {
       $selectors: append(
         $selectors,
         unquote("." + $prefix + "-" + $block),
         comma
       );
-    } @else {
-      $selectors: append($selectors, unquote("." + $block), comma);
     }
   }
 
