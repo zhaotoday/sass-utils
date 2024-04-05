@@ -7,7 +7,15 @@
   $selectors: null;
 
   @each $block in $blocks {
-    $selectors: append($selectors, unquote('.' + $prefix + '-' + $block), comma);
+    @if ($prefix == "") {
+      $selectors: append(
+        $selectors,
+        unquote("." + $prefix + "-" + $block),
+        comma
+      );
+    } @else {
+      $selectors: append($selectors, unquote("." + $block), comma);
+    }
   }
 
   #{$selectors} {
@@ -80,7 +88,7 @@
  * @param {array} $blocks 名称
  */
 @mixin b($blocks...) {
-  @include block(b, $blocks...) {
+  @include block("", $blocks...) {
     @content;
   }
 }
@@ -113,7 +121,11 @@
   $selectors: null;
 
   @each $element in $elements {
-    $selectors: append($selectors, unquote('&' + $bem-separator-element + $element), comma);
+    $selectors: append(
+      $selectors,
+      unquote("&" + $bem-separator-element + $element),
+      comma
+    );
   }
 
   #{$selectors} {
@@ -129,7 +141,11 @@
   $selectors: null;
 
   @each $modifier in $modifiers {
-    $selectors: append($selectors, unquote('&' + $bem-separator-modifier + $modifier), comma);
+    $selectors: append(
+      $selectors,
+      unquote("&" + $bem-separator-modifier + $modifier),
+      comma
+    );
   }
 
   #{$selectors} {
@@ -145,7 +161,7 @@
   $selectors: null;
 
   @each $state in $states {
-    $selectors: append($selectors, unquote('&.' + $state), comma);
+    $selectors: append($selectors, unquote("&." + $state), comma);
   }
 
   #{$selectors} {
@@ -310,21 +326,11 @@
   @if ($lines == "1" or $lines == 1) {
     white-space: nowrap;
     text-overflow: ellipsis;
-  } @else { /* stylelint-disable-line */
+  } @else {
+    /* stylelint-disable-line */
     display: -webkit-box;
     -webkit-line-clamp: $lines;
     -webkit-box-orient: vertical;
-  }
-}
-
-/**
- * 仅 IE8 可用
- * @param {string} $property 属性
- * @param {string} $value 值
- */
-@mixin only-ie8($property, $value) {
-  @if $supports-ie8 {
-    #{$property}: $value + \9;
   }
 }
 
@@ -335,7 +341,12 @@
  * @param {string} $bottom 底部位置
  * @param {string} $left 左边位置
  */
-@mixin position--relative($top: null, $right: null, $bottom: null, $left: null) {
+@mixin position--relative(
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
   position: relative;
 
   @if $top != null {
@@ -362,7 +373,12 @@
  * @param {string} $bottom 底部位置
  * @param {string} $left 左边位置
  */
-@mixin position--absolute($top: null, $right: null, $bottom: null, $left: null) {
+@mixin position--absolute(
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
   position: absolute;
 
   @if $top != null {
